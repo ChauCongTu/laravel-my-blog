@@ -1,0 +1,126 @@
+body {
+  background-color: #142030;
+  color: #fff;
+}
+
+.logo {
+  font-family: Garamond;
+  font-size: 34px;
+}
+.logo .domain {
+  color: #dc3445;
+}
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.bg-grd {
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.linked .linked-item {
+  color: #fff;
+}
+.linked .linked-item:hover {
+  color: #dc3445;
+}
+
+.navbar-custom {
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  padding: 5px 20px;
+  color: #fff;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.navbar-custom:hover {
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+  font-family: poppins, sans-serif;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  color: #dc3445;
+}
+
+.slick-arrow {
+  background-color: transparent;
+  border: none;
+  color: #8f9bad;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  z-index: 10;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.pull-left {
+  left: 0;
+}
+
+.pull-right {
+  right: 0;
+}
+
+.slick-dots {
+  list-style-type: none;
+}
+.slick-dots li {
+  display: none;
+  /* more CSS */
+}
+
+.new-posts .new-item {
+  position: relative;
+  font-size: 14px;
+  height: 540px;
+}
+.new-posts .new-item .thumb {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  height: 540px;
+  width: 100%;
+  opacity: 0.2;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.new-posts .new-item .content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+.new-posts .new-item .content .name a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 30px;
+  width: 60%;
+}
+.new-posts .new-item .content .name a:hover {
+  color: #dc3445;
+}
+
+/*# sourceMappingURL=app.css.map */
