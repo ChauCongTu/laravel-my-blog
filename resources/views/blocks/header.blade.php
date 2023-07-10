@@ -16,7 +16,7 @@
     </div>
 </div>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light py-4">
+<nav class="navbar navbar-expand-lg navbar-light py-4" id="nav-header">
     <!-- Container wrapper -->
     <div class="container">
         <!-- Navbar brand -->
@@ -25,7 +25,7 @@
         </a>
 
         <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <div class="collapse navbar-collapse">
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">

@@ -11,7 +11,7 @@
             <a href="" class="linked-item ps-3"><i class="fa-brands fa-youtube"></i></a>
             <a href="" class="linked-item ps-3"><i class="fa-brands fa-github"></i></a>
         </div>
-        <div id="back2top" class="border p-2 rounded text-muted" style="cursor: pointer">
+        <div id="back2top" class="btn btn-outline-secondary btn-sm rounded-4" style="cursor: pointer">
             <i class="fa-solid fa-chevron-up"></i> Back to top
         </div>
     </div>
