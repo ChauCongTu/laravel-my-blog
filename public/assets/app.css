@@ -20,10 +20,47 @@ body {
   padding-top: 102px;
 }
 
+.list-group a {
+  color: #fff;
+  text-decoration: none;
+}
+.list-group a:hover {
+  color: #dc3445;
+}
+
 nav {
   background-color: #142030;
   z-index: 15;
   transition: 0.6s;
+}
+nav .nav-item {
+  position: relative;
+}
+nav .nav-item .nav-link-sub_item {
+  display: none;
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 0;
+  z-index: 20;
+}
+nav .nav-item .nav-link-sub_item a {
+  display: block;
+  padding: 10px;
+  color: #142030;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.5s;
+  border-bottom: 1px solid #142030;
+}
+nav .nav-item .nav-link-sub_item a:hover {
+  color: #dc3445;
+  padding-left: 20px;
+  transition: 0.5s;
+}
+nav .nav-item:hover .nav-link-sub_item {
+  display: block;
+  transition: 0.5s;
 }
 
 .logo {
@@ -41,6 +78,13 @@ nav {
 .bg-grd {
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: 0.5s;
+}
+
+.bg-grd:hover {
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #FFCC70 46%, #C850C0 100%);
+  transition: 0.5s;
 }
 
 .linked .linked-item {
@@ -56,9 +100,7 @@ nav {
 }
 
 .navbar-custom {
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  padding: 5px 20px;
+  padding: 5px 40px;
   color: #fff;
   border-radius: 30px;
   -webkit-border-radius: 30px;

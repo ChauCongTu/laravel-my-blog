@@ -55,10 +55,54 @@ body {
     padding-top: 102px;
 }
 
+.list-group {
+    a {
+        color: $color;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #dc3445;
+    }
+}
+
 nav {
     background-color: $background-color;
     z-index: 15;
     transition: .6s;
+
+    .nav-item {
+        position: relative;
+
+        .nav-link-sub_item {
+            display: none;
+            position: absolute;
+            width: 200px;
+            background-color: $color;
+            border-radius: 0;
+            z-index: 20;
+
+            a {
+                display: block;
+                padding: 10px;
+                color: $background-color;
+                font-size: 14px;
+                text-decoration: none;
+                transition: .5s;
+                border-bottom: 1px solid $background-color;
+            }
+
+            a:hover {
+                color: $danger;
+                padding-left: 20px;
+                transition: .5s;
+            }
+        }
+    }
+
+    .nav-item:hover .nav-link-sub_item {
+        display: block;
+        transition: .5s;
+    }
 }
 
 // Header style
@@ -79,7 +123,15 @@ nav {
 .bg-grd {
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    transition: .5s;
 }
+
+.bg-grd:hover {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #FFCC70 46%, #C850C0 100%);
+    transition: .5s;
+}
+
 
 .linked {
     .linked-item {
@@ -96,9 +148,7 @@ nav {
 }
 
 .navbar-custom {
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    padding: 5px 20px;
+    padding: 5px 40px;
     color: #fff;
     border-radius: 30px;
     -webkit-border-radius: 30px;

@@ -15,3 +15,6 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('/category', function() { return 'danh mục'; })->name('category.show');
