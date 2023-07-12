@@ -4,6 +4,40 @@ body {
   color: #fff;
 }
 
+.text-muted {
+  color: #8f9bad;
+}
+
+.btn-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: #dc3445;
+}
+
+.btn-muted {
+  color: #8f9bad;
+  text-decoration: none;
+}
+
+.btn-muted:hover {
+  color: #dc3445;
+}
+
+.action a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.action a i {
+  font-size: 13px;
+}
+.action a:hover {
+  color: #dc3445;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -85,6 +119,10 @@ nav .nav-item:hover .nav-link-sub_item {
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #FFCC70 46%, #C850C0 100%);
   transition: 0.5s;
+}
+
+.bg-home {
+  background-color: #142030;
 }
 
 .linked .linked-item {

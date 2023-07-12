@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/category', function() { return 'danh mục'; })->name('category.show');
+Route::get('/{slug}-{id}', [CategoriesController::class, 'show'])->where(['slug' => '.+', 'id' => '[0-9]+'])->name('category.show');
+
+Route::get('/{slug}-{id}.html', [PostController::class, 'show'])->where(['slug' => '.+', 'id' => '[0-9]+'])->name('post.show');
+
+Route::post('/submit_comment', [PostController::class, 'comment'])->name('post.comment');

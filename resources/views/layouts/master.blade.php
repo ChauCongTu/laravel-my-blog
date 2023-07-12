@@ -19,7 +19,28 @@
         @include('blocks.header')
     </header>
     <main class="container">
-        @yield('content')
+        @yield('main-sidebar')
+        <div class="row">
+            <div class="col-md-8">
+                @yield('content')
+            </div>
+            <div class="col-md-4">
+                <div class="border border-secondary rounded">
+                    <p class="p3">
+                    <div class="d-block text-center logo fw-bold"><a href="{{ route('home') }}"> TaoDiCodeDoi <span
+                                class="domain">.Site</span></a></div>
+                    </p>
+                    <p class="text-muted px-5 text-center">Blog chia sẻ tất cả những gì mình biết đến mọi người. Bạn có
+                        thể tìm
+                        thấy Patch PES từ
+                        PES 2013, PES
+                        2016, PES 2017, PES 2018 cho đến PES 2022. Và bạn cũng có thể tìm thấy các thủ thuật máy tính
+                        Windows,
+                        Ubuntu, thủ thuật facebook, thủ thuật internet, thủ thuật Android.</p>
+                </div>
+                {{-- Top 5 Post --}}
+            </div>
+        </div>
     </main>
     <footer>
         @include('blocks.footer')

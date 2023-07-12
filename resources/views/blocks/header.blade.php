@@ -33,18 +33,19 @@
                     @if ($category->child()->count() > 0)
                         <li class="nav-item px-3">
                             <a class="nav-link"
-                                href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->name }}<i
+                                href="{{ route('category.show', ['slug' => Str::slug($category->name), 'id' => $category->id]) }}">{{ $category->name }}<i
                                     class="fa-solid fa-chevron-down ms-2"></i></a>
                             <ul class="nav-link-sub_item list-group">
                                 @foreach ($category->child()->get() as $child)
                                     <a
-                                        href="{{ route('category.show', ['id' => $category->id, 'filter' => $child->id]) }}">{{ $child->name }}</a>
+                                        href="{{ route('category.show', ['slug' => Str::slug($child->name), 'id' => $child->id ]) }}">{{ $child->name }}</a>
                                 @endforeach
                             </ul>
                         </li>
                     @else
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('category.show') }}">{{ $category->name }}</a>
+                            <a class="nav-link"
+                                href="{{ route('category.show', ['slug' => Str::slug($category->name), 'id' => $category->id]) }}">{{ $category->name }}</a>
                         </li>
                     @endif
                 @endforeach
@@ -88,12 +89,12 @@
                 @if ($loop->last)
                     <div class="item p-2">
                         <a class="btn btn-link text-white fw-bold"
-                            href="{{ route('category.show') }}">{{ $category->name }}</a>
+                            href="{{ route('category.show', ['slug' => Str::slug($category->name), 'id' => $category->id]) }}">{{ $category->name }}</a>
                     </div>
                 @else
                     <div class="item border-bottom p-2 border-secondary">
                         <a class="btn btn-link text-white fw-bold"
-                            href="{{ route('category.show') }}">{{ $category->name }}</a>
+                            href="{{ route('category.show', ['slug' => Str::slug($category->name), 'id' => $category->id]) }}">{{ $category->name }}</a>
                     </div>
                 @endif
             @endforeach

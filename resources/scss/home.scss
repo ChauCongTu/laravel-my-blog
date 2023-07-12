@@ -39,6 +39,44 @@ body {
     color: $color;
 }
 
+.text-muted {
+    color: $muted-color;
+}
+
+.btn-link {
+    color: $color;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: $danger;
+}
+
+.btn-muted {
+    color: $muted-color;
+    text-decoration: none;
+}
+
+.btn-muted:hover {
+    color: $danger;
+}
+
+.action {
+    a {
+        color: $color;
+        font-weight: 700;
+        text-decoration: none;
+
+        i {
+            font-size: 13px;
+        }
+    }
+
+    a:hover {
+        color: $danger;
+    }
+}
+
 .sticky {
     position: fixed;
     top: 0;
@@ -60,6 +98,7 @@ body {
         color: $color;
         text-decoration: none;
     }
+
     a:hover {
         color: #dc3445;
     }
@@ -132,6 +171,9 @@ nav {
     transition: .5s;
 }
 
+.bg-home {
+    background-color: $background-color;
+}
 
 .linked {
     .linked-item {

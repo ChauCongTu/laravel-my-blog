@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +25,7 @@ class AppServiceProvider extends ServiceProvider
             $categories = Category::where('parent_id', null)->get();
             $view->with('categories', $categories);
         });
+        Paginator::useBootstrapFive();
+        Paginator::useBootstrapFour();
     }
 }
