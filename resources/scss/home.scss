@@ -1,38 +1,7 @@
-// Variable define
-$background-color: #142030;
-$muted-color: #8f9bad;
-$color: #fff;
-$danger: #dc3445;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import '_variable';
 
-// Screen size
-$phone: 600px;
-$tab-port: 800px;
-$tab-land: 1000px;
-$desktop: 1400px;
-
-@mixin phone {
-    @media only screen and (max-width: $phone) {
-        @content;
-    }
-}
-
-@mixin tab-port {
-    @media only screen and (max-width: $tab-port) {
-        @content;
-    }
-}
-
-@mixin tab-land {
-    @media only screen and (max-width: $tab-land) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media only screen and (max-width: $desktop) {
-        @content;
-    }
-}
 
 body {
     background-color: $background-color;
@@ -439,5 +408,39 @@ nav {
             font-size: 14px;
             color: $muted-color;
         }
+    }
+}
+
+.pagination {
+    text-align: center;
+
+    .page-item {
+        display: block;
+        margin-right: 10px;
+
+        .page-link {
+            width: 40px;
+            height: 40px;
+            background-color: $background-color;
+            color: $muted-color;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: $danger;
+            border-color: $danger;
+        }
+    }
+
+    .active {
+        .page-link {
+            background-color: $color;
+            color: $background-color;
+        }
+    }
+
+    .disabled {
+        display: none;
     }
 }

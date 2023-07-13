@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 body {
   background-color: #142030;
   color: #fff;
@@ -362,6 +363,33 @@ nav .nav-item:hover .nav-link-sub_item {
 .p-list .l-content .date {
   font-size: 14px;
   color: #8f9bad;
+}
+
+.pagination {
+  text-align: center;
+}
+.pagination .page-item {
+  display: block;
+  margin-right: 10px;
+}
+.pagination .page-item .page-link {
+  width: 40px;
+  height: 40px;
+  background-color: #142030;
+  color: #8f9bad;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.pagination .page-item a:hover {
+  color: #dc3445;
+  border-color: #dc3445;
+}
+.pagination .active .page-link {
+  background-color: #fff;
+  color: #142030;
+}
+.pagination .disabled {
+  display: none;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,36 @@
+// Variable define
+$background-color: #142030;
+$muted-color: #8f9bad;
+$color: #fff;
+$danger: #dc3445;
+
+// Screen size
+$phone: 600px;
+$tab-port: 800px;
+$tab-land: 1000px;
+$desktop: 1400px;
+
+
+@mixin phone {
+    @media only screen and (max-width: $phone) {
+        @content;
+    }
+}
+
+@mixin tab-port {
+    @media only screen and (max-width: $tab-port) {
+        @content;
+    }
+}
+
+@mixin tab-land {
+    @media only screen and (max-width: $tab-land) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (max-width: $desktop) {
+        @content;
+    }
+}

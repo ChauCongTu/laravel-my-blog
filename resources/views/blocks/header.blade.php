@@ -38,7 +38,7 @@
                             <ul class="nav-link-sub_item list-group">
                                 @foreach ($category->child()->get() as $child)
                                     <a
-                                        href="{{ route('category.show', ['slug' => Str::slug($child->name), 'id' => $child->id ]) }}">{{ $child->name }}</a>
+                                        href="{{ route('category.show', ['slug' => Str::slug($child->name), 'id' => $child->id]) }}">{{ $child->name }}</a>
                                 @endforeach
                             </ul>
                         </li>
@@ -53,8 +53,8 @@
             <!-- Left links -->
 
             <div class="d-flex align-items-center">
-                <form class="d-flex input-group w-auto" action="">
-                    <input type="search" class="form-control" name="k" placeholder="Tìm kiếm" />
+                <form class="d-flex input-group w-auto" action="{{ route('search') }}">
+                    <input type="search" class="form-control" name="s" placeholder="Tìm kiếm" />
                     <button class="btn bg-grd text-white border-0" id="search-addon">
                         <i class="fas fa-search"></i>
                     </button>
@@ -85,6 +85,14 @@
     </div>
     <div class="offcanvas-body">
         <div class="list-group list-group-light">
+            <div class="item pb-2 border-bottom border-secondary">
+                <form class="d-flex input-group w-auto" action="{{ route('search') }}">
+                    <input type="search" class="form-control" name="s" placeholder="Tìm kiếm" />
+                    <button class="btn bg-grd text-white border-0" id="search-addon">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
             @foreach ($categories as $category)
                 @if ($loop->last)
                     <div class="item p-2">

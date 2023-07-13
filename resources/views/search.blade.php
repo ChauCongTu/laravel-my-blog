@@ -1,15 +1,14 @@
 @extends('layouts.master')
 @section('title')
-    Tổng hợp {{ $category->name }}
+    Bạn đang tìm kiếm về "{{ $searchString }}"
 @endsection
 @section('main-sidebar')
     <section class="main-sidebar">
         <div class="text-center py-5">
-            <p class="fw-bold h3">{{ $category->name }}</p>
+            <p class="fw-bold h3">Tìm kiếm</p>
             <p class="text-muted">
                 <a href="{{ route('home') }}" class="text-muted">ChauCongTu.Site</a> \
-                {{ !empty($category->parent) ? $category->parent->name . ' \\' : false }}
-                {{ $category->name }}
+                Kết quả tìm kiếm
             </p>
         </div>
     </section>
@@ -48,7 +47,7 @@
             </div>
         @empty
             <div class="text-center h4">
-                <p class="text-muted">Danh mục này chưa có bài viết nào! Quay lại sau nhé</p>
+                <p class="text-muted">Không tìm thấy bài viết cần tìm</p>
             </div>
         @endforelse
 
