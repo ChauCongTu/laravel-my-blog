@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -30,7 +31,16 @@ Route::post('/submit_comment', [PostController::class, 'comment'])->name('post.c
 
 // Admin route
 Route::get('/dang-nhap.html', [AuthController::class, 'login'])->name('login');
-Route::post('/dang-nhap.html', [AuthController::class, 'handleLogin'])->name('login');
-Route::prefix('admin')->group(function() {
 
-});
+Route::post('/dang-nhap.html', [AuthController::class, 'handleLogin'])->name('login');
+
+Route::get('logout', function () {
+    auth()->logout();
+    Session()->flush();
+
+    return redirect(route('login'));
+})->name('logout');
+
+Route::prefix('admin')->middleware('checklogin')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('admin');
+})->name('admin');
