@@ -11,7 +11,7 @@ class PostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,23 @@ class PostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'name' => 'required|min:10',
+            'content' => 'required',
+            'thumb' => 'mimes:jpeg,png,jpg,gif,svg'
+        ];
+    }
+    public function messages(): array {
+        return [
+            'required' => ':attribute là trường bắt buộc',
+            'min' => ':attribute phải có ít nhất :min kí tự',
+            'mines' => 'Định dạng hình ảnh được cho phép: :mines'
+        ];
+    }
+    public function attributes(): array{
+        return [
+            'name' => 'Tên bài viết',
+            'content' => 'Nội dung',
+            'thumb' => 'Hình ảnh'
         ];
     }
 }

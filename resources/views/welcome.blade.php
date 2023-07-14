@@ -8,14 +8,16 @@
             @foreach ($lastest as $post)
                 <div class="new-item text-center">
                     <div class="bg-image rounded">
-                        <img src="{{ $post->thumb }}" class="scale-zoom w-100">
+                        <img src="{{ asset('storage/' . $post->thumb) }}" class="scale-zoom w-100">
                     </div>
                     <div class="content d-flex align-items-center justify-content-center">
                         <div>
                             <div class="category mb-2"><span
                                     class="bg-grd py-2 px-3 rounded-5">{{ $post->category->name }}</span>
                             </div>
-                            <div class="name mb-3"><a href="{{ route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id]) }}">{{ $post->name }}</a></div>
+                            <div class="name mb-3"><a
+                                    href="{{ route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id]) }}">{{ $post->name }}</a>
+                            </div>
                             <div class="d-flex justify-content-center">
                                 <div class="post-author me-2">{{ $post->user->display_name }}</div> &#8226; <div
                                     class="date-post ms-2">
@@ -33,8 +35,7 @@
     <div class="p-2">
         {{-- Foreach Category --}}
         @foreach ($categories as $category)
-            <div class="title h3 text-danger mb-3 mt-5"><span class="title-span fw-bold">{{ $category->name }}</span>
-            </div>
+            <div class="title h3 text-danger mb-3 mt-5"><span class="title-span fw-bold">{{ $category->name }}</span></div>
             <div class="list border border-lg border-secondary rounded">
                 <div class="row p-3">
                     <div class="col-md-6">
@@ -43,8 +44,11 @@
                                 @foreach ($child->posts as $post)
                                     @if ($loop->first)
                                         {{-- First Item --}}
-                                        <x-item-card-categories first=1 :thumb="$post->thumb" :author="$post->user->display_name"
-                                            :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
+                                        <x-item-card-categories first=1 :thumb="asset('storage/' . $post->thumb)" :author="$post->user->display_name"
+                                            :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', [
+                                                'slug' => Str::slug($post->name),
+                                                'id' => $post->id,
+                                            ])" :name="$post->name" :content="$post->content" />
                                     @endif
                                 @endforeach
                             @endforeach
@@ -52,8 +56,11 @@
                             @foreach ($category->posts as $post)
                                 @if ($loop->first)
                                     {{-- First Item --}}
-                                    <x-item-card-categories first=1 :thumb="$post->thumb" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))"
-                                        :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
+                                    <x-item-card-categories first=1 :thumb="asset('storage/' . $post->thumb)" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))"
+                                        :link="route('post.detail', [
+                                            'slug' => Str::slug($post->name),
+                                            'id' => $post->id,
+                                        ])" :name="$post->name" :content="$post->content" />
                                 @endif
                             @endforeach
                         @endif
@@ -66,8 +73,12 @@
                                     @foreach ($child->posts as $post)
                                         @if (!$loop->first)
                                             {{-- First Item --}}
-                                            <x-item-card-categories first=0 :thumb="$post->thumb" :author="$post->user->display_name"
-                                                :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
+                                            <x-item-card-categories first=0 :thumb="asset('storage/' . $post->thumb)" :author="$post->user->display_name"
+                                                :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', [
+                                                    'slug' => Str::slug($post->name),
+                                                    'id' => $post->id,
+                                                ])" :name="$post->name"
+                                                :content="$post->content" />
                                         @endif
                                     @endforeach
                                 @endforeach
@@ -75,8 +86,11 @@
                                 @foreach ($category->posts as $post)
                                     @if (!$loop->first)
                                         {{-- First Item --}}
-                                        <x-item-card-categories first=0 :thumb="$post->thumb" :author="$post->user->display_name"
-                                            :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
+                                        <x-item-card-categories first=0 :thumb="asset('storage/' . $post->thumb)" :author="$post->user->display_name"
+                                            :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', [
+                                                'slug' => Str::slug($post->name),
+                                                'id' => $post->id,
+                                            ])" :name="$post->name" :content="$post->content" />
                                     @endif
                                 @endforeach
                             @endif
@@ -91,8 +105,8 @@
         <div class="border border-secondary rounded" id="lastest-list">
             {{-- Foreach lastest post --}}
             @forelse ($lastest as $post)
-                <x-lastes-post :thumb="$post->thumb" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))" :category="$post->category->name" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])"
-                    :name="$post->name" :content="$post->content" />
+                <x-lastes-post :thumb="asset('storage/' . $post->thumb)" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))" :category="$post->category->name"
+                    :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
             @empty
             @endforelse
             <div class="m-2 text-center">

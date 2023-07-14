@@ -14,7 +14,7 @@
             </a>
         </div>
         <div class="n-content">
-            {{ $content }}
+            {!! $content !!}
         </div>
     </div>
 </div>

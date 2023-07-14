@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    Thêm danh mục
+    Thêm bài viết
 @endsection
 @section('content')
     <div class="card border-left-primary shadow h-100 py-2">

@@ -13,7 +13,9 @@ class Post extends Model
     protected $fillable = [
         'name',
         'thumb',
-        'content'
+        'content',
+        'user_id',
+        'category_id'
     ];
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);

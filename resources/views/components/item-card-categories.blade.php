@@ -44,7 +44,7 @@
             <a href="">{{ $name }}</a>
         </div>
         <div class="p-content">
-            {{ $content }}
+            {!! $content !!}
         </div>
     </div>
 @endif
