@@ -73,7 +73,9 @@
                                             </div>
                                         @endif
                                         <hr>
-                                        <a href="mailto:admin@chaucongtu.site">Become a collaborator?</a>
+                                        <a href="mailto:admin@chaucongtu.site?subject=V.v trở thành cộng tác viên viết bài">Become a collaborator</a>
+                                        <br/>
+                                        <a href="">Forgot password?</a>
                                     </form>
                                 </div>
                             </div>

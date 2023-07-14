@@ -15,7 +15,7 @@
                             <div class="category mb-2"><span
                                     class="bg-grd py-2 px-3 rounded-5">{{ $post->category->name }}</span>
                             </div>
-                            <div class="name mb-3"><a href="{{ route('home') }}">{{ $post->name }}</a></div>
+                            <div class="name mb-3"><a href="{{ route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id]) }}">{{ $post->name }}</a></div>
                             <div class="d-flex justify-content-center">
                                 <div class="post-author me-2">{{ $post->user->display_name }}</div> &#8226; <div
                                     class="date-post ms-2">
@@ -44,7 +44,7 @@
                                     @if ($loop->first)
                                         {{-- First Item --}}
                                         <x-item-card-categories first=1 :thumb="$post->thumb" :author="$post->user->display_name"
-                                            :date="date('d/m/Y', strtotime($post->created_at))" link="/" :name="$post->name" :content="$post->content" />
+                                            :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
                                     @endif
                                 @endforeach
                             @endforeach
@@ -53,7 +53,7 @@
                                 @if ($loop->first)
                                     {{-- First Item --}}
                                     <x-item-card-categories first=1 :thumb="$post->thumb" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))"
-                                        link="/" :name="$post->name" :content="$post->content" />
+                                        :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
                                 @endif
                             @endforeach
                         @endif
@@ -67,7 +67,7 @@
                                         @if (!$loop->first)
                                             {{-- First Item --}}
                                             <x-item-card-categories first=0 :thumb="$post->thumb" :author="$post->user->display_name"
-                                                :date="date('d/m/Y', strtotime($post->created_at))" link="/" :name="$post->name" :content="$post->content" />
+                                                :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
                                         @endif
                                     @endforeach
                                 @endforeach
@@ -76,7 +76,7 @@
                                     @if (!$loop->first)
                                         {{-- First Item --}}
                                         <x-item-card-categories first=0 :thumb="$post->thumb" :author="$post->user->display_name"
-                                            :date="date('d/m/Y', strtotime($post->created_at))" link="/" :name="$post->name" :content="$post->content" />
+                                            :date="date('d/m/Y', strtotime($post->created_at))" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])" :name="$post->name" :content="$post->content" />
                                     @endif
                                 @endforeach
                             @endif
@@ -91,7 +91,7 @@
         <div class="border border-secondary rounded" id="lastest-list">
             {{-- Foreach lastest post --}}
             @forelse ($lastest as $post)
-                <x-lastes-post :thumb="$post->thumb" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))" :category="$post->category->name" link="/"
+                <x-lastes-post :thumb="$post->thumb" :author="$post->user->display_name" :date="date('d/m/Y', strtotime($post->created_at))" :category="$post->category->name" :link="route('post.detail', ['slug' => Str::slug($post->name), 'id' => $post->id])"
                     :name="$post->name" :content="$post->content" />
             @empty
             @endforelse

@@ -8,11 +8,11 @@
             <li class="breadcrumb-item"><a href="{{ route('home') }}" class="btn-muted">ChauCongTu.Site</a></li>
             @if (!empty($post->category->parent))
                 <li class="breadcrumb-item text-muted" aria-current="page"><a
-                        href="{{ route('category.show', ['slug' => Str::slug($post->category->parent->name), 'id' => $post->category->parent->id]) }}"
+                        href="{{ route('category.detail', ['slug' => Str::slug($post->category->parent->name), 'id' => $post->category->parent->id]) }}"
                         class="btn-muted"> {{ $post->category->parent->name }}</a></li>
             @endif
             <li class="breadcrumb-item text-muted" aria-current="page"><a
-                    href="{{ route('category.show', ['slug' => Str::slug($post->category->name), 'id' => $post->category->id]) }}"
+                    href="{{ route('category.detail', ['slug' => Str::slug($post->category->name), 'id' => $post->category->id]) }}"
                     class="btn-muted"> {{ $post->category->name }}</a></li>
             <li class="breadcrumb-item text-muted" aria-current="page">{{ $post->name }}</li>
         </ol>

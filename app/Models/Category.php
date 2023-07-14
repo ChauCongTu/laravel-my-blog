@@ -11,7 +11,7 @@ class Category extends Model
 {
     use HasFactory;
     public $fillable = [
-        'name'
+        'name', 'parent_id'
     ];
     public function child(): HasMany {
         return $this->hasMany(Category::class, 'parent_id');
